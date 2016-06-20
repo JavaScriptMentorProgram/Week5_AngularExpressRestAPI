@@ -29,7 +29,7 @@ router.post('/', (req, res) =>{
   image.name = req.body.name;
   image.url = req.body.url;
   photos.push(image);
-  fs.writeFile('./public/res.json', JSON.stringify(photos), (err) => {
+  fs.writeFile('./resource/photos.json', JSON.stringify(photos), (err) => {
     if(err){
       console.log(err);
     }
@@ -45,18 +45,13 @@ router.put('/image/:id', (req, res) => {
       image.url = req.body.url;
     }
   });
-  fs.writeFile('./public/res.json', JSON.stringify(photos), (err) => {
+  fs.writeFile('./resource/photos.json', JSON.stringify(photos), (err) => {
     if(err){
       console.log(err);
     }
   });
   res.send(photos);
 });
-
-/*router.delete('/', (req, res) => {
-  photos = {};
-  res.send(photos);
-});*/
 
 router.delete('/image/:id', (req, res) => {
   let id = req.params.id;
@@ -76,10 +71,7 @@ router.delete('/image/:id', (req, res) => {
 });
 
 router.get('/upload', (req, res) => {
-  res.render('upload', {});
+  res.send('upload');
 });
 
-router.post('/upload', (req, res) => {
-  console.log(req.body);
-});
 module.exports = router;

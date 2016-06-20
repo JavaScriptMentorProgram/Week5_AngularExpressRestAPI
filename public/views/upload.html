@@ -1,0 +1,20 @@
+<div class='col-lg-4 col-lg-offset-4'>
+  <br>
+  <div class="input-group">
+    <select class="form-control" ng-model='pho' ng-options='pho.name for pho in photo'>
+    </select>
+    <span class="input-group-addon" ng-click='display()'>Display</span>
+  </div>
+  <br>
+  <div class="input-group">
+    <input type="file" id='file' class="form-control" aria-describedby="basic-addon2">
+    <span class="input-group-addon" ng-click='upload()'>Upload</span>
+  </div>
+  <br>
+  <div class='col-lg-12'>
+
+    <img id='img'/>
+
+  </div>
+
+</div>
